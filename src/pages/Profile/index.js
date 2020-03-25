@@ -51,7 +51,7 @@ export default function Profile() {
     } catch (error) {
       alert('Erro ao deletar incidente');
     }
-  }, []);
+  }, [incidents]);
 
   return (
     <div className="profile-container">

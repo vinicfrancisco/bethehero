@@ -9,9 +9,9 @@ import logoImage from '../../assets/logo.svg';
 import './styles.css';
 
 export default function Logon() {
-  const history = useHistory();
-
   const [id, setId] = useState('');
+
+  const history = useHistory();
 
   const handleLogon = useCallback(async (e) => {
     e.preventDefault();

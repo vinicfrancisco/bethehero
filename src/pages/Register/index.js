@@ -8,13 +8,13 @@ import logoImage from '../../assets/logo.svg';
 import './styles.css';
 
 export default function Register() {
-  const history = useHistory();
-
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [whatsapp, setWhatsapp] = useState('');
   const [city, setCity] = useState('');
   const [uf, setUf] = useState('');
+
+  const history = useHistory();
 
   const handleRegister = useCallback(async (e) => {
     e.preventDefault();

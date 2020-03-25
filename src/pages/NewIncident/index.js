@@ -30,11 +30,6 @@ export default function NewIncident() {
           <textarea placeholder="Descrição" />
           <input placeholder="Valor em reais" />
 
-          <div className="input-group">
-            <input placeholder="Cidade" />
-            <input placeholder="UF" style={{ width: 80 }} />
-          </div>
-
           <button className="button" type="submit">
             Cadastrar
           </button>

@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Be The Hero Web
+
+This is the web view of Be The Hero, an OmniStack project to ONG's and philanthropy projects.
 
 ## Available Scripts
 

@@ -3,10 +3,11 @@ import { Link, useHistory } from 'react-router-dom';
 import { FiLogIn } from 'react-icons/fi';
 import api from '../../services/api';
 
+import Button from '../../components/Button';
 import heroesImage from '../../assets/heroes.png';
 import logoImage from '../../assets/logo.svg';
 
-import './styles.css';
+import { Container, Form, Title } from './styles';
 
 export default function Logon() {
   const [id, setId] = useState('');
@@ -31,12 +32,12 @@ export default function Logon() {
   }, [id]);
 
   return (
-    <div className="logon-container">
-      <section className="form">
+    <Container>
+      <Form>
         <img src={logoImage} alt="Be The Heroe" className="logo" />
 
         <form onSubmit={handleLogon}>
-          <h1>Faça seu logon</h1>
+          <Title>Faça seu logon</Title>
 
           <input
             placeholder="Sua ID"
@@ -44,16 +45,16 @@ export default function Logon() {
             onChange={(e) => setId(e.target.value)}
           />
 
-          <button className="button" type="submit">Entrar</button>
+          <Button type="submit">Entrar</Button>
 
           <Link className="back-link" to="/register">
             <FiLogIn size={16} color="#e02041" />
             Não tenho cadastro
           </Link>
         </form>
-      </section>
+      </Form>
 
       <img src={heroesImage} alt="Heroes" className="heroes" />
-    </div>
+    </Container>
   );
 }

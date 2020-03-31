@@ -1,25 +1,26 @@
-.logon-container {
+import styled from 'styled-components';
+
+export const Container = styled.div`
     align-items: center;
     display: flex;
     height: 100vh;
-    justify-content: space-between ;
+    justify-content: space-between;
     margin: 0 auto;
     max-width: 1120px;
     width: 100%;
-}
+`;
 
-.logon-container section.form {
+export const Form = styled.section`
     margin-right: 30px;
     max-width: 350px;
     width: 100%;
-}
 
-.logon-container section.form form {
-    margin-top: 100px;
-}
+    form {
+        margin-top: 100px;
+    }
+`;
 
-.logon-container section.form form h1 {
+export const Title = styled.h2`
     font-size: 32px;
     margin-bottom: 32px;
-}
-
+`;

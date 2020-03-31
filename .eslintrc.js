@@ -23,6 +23,8 @@ module.exports = {
   ],
   rules: {
     "react/jsx-filename-extension": "off",
-    "no-alert": "off"
+    "no-alert": "off",
+    "import/prefer-default-export" : 'off',
+    "react/jsx-props-no-spreading": 'off'
   },
 };

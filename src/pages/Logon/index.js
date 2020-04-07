@@ -1,40 +1,43 @@
 import React, { useState, useCallback } from 'react';
-import { Link, useHistory } from 'react-router-dom';
 import { FiLogIn } from 'react-icons/fi';
-import api from '../../services/api';
+import { Link, useHistory } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
-import Button from '../../components/Button';
 import heroesImage from '../../assets/heroes.png';
 import logoImage from '../../assets/logo.svg';
-
-import { Container, Form, Title } from './styles';
+import Button from '../../components/Button';
+import api from '../../services/api';
+import { Container, Logo, Form, Title, HeroesImage } from './styles';
 
 export default function Logon() {
   const [id, setId] = useState('');
 
   const history = useHistory();
 
-  const handleLogon = useCallback(async (e) => {
-    e.preventDefault();
+  const handleLogon = useCallback(
+    async (e) => {
+      e.preventDefault();
 
-    try {
-      const response = await api.post('sessions', { id });
+      try {
+        const response = await api.post('sessions', { id });
 
-      const { name } = response.data;
+        const { name } = response.data;
 
-      localStorage.setItem('id', id);
-      localStorage.setItem('ongName', name);
+        localStorage.setItem('id', id);
+        localStorage.setItem('ongName', name);
 
-      history.push('/profile');
-    } catch (error) {
-      alert('Falha ao realizar logon');
-    }
-  }, [id]);
+        history.push('/profile');
+      } catch (error) {
+        toast.error('Falha ao realizar logon');
+      }
+    },
+    [id, history]
+  );
 
   return (
     <Container>
       <Form>
-        <img src={logoImage} alt="Be The Heroe" className="logo" />
+        <Logo src={logoImage} alt="Be The Heroe" className="logo" />
 
         <form onSubmit={handleLogon}>
           <Title>Faça seu logon</Title>
@@ -54,7 +57,7 @@ export default function Logon() {
         </form>
       </Form>
 
-      <img src={heroesImage} alt="Heroes" className="heroes" />
+      <HeroesImage src={heroesImage} alt="Heroes" className="heroes" />
     </Container>
   );
 }
